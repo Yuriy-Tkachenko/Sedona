@@ -1,4 +1,12 @@
+//Global
 @import "global/fonts.scss";
 @import "global/variables.scss";
 @import "global/global.scss";
+@import "global/mixins.scss";
+
 //Blocks
+@import "blocks/page-header.scss";
+@import "blocks/main-offer.scss";
+@import "blocks/main-features.scss";
+@import "blocks/main-modal-search.scss";
+@import "blocks/main-footer.scss";

@@ -1,0 +1,138 @@
+.page-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.header-logo {
+  width: 100px;
+  height: 84px;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    left: 45%;
+    top: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 187px;
+    height: 97px;
+  }
+}
+
+.page-header__main-navigation {
+  background-color: $sky-blue;
+  order: -1;
+
+  @media (min-width: $tablet-width) {
+    background-color: $basic-white;
+  }
+}
+
+.page-header__main-navigation__list {
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    height: 56px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.page-header__main-navigation__item {
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    flex-basis: 100%;
+  }
+}
+
+.page-header__main-navigation__item--space {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    flex-basis: 100%;
+  }
+}
+
+.page-header__main-navigation__item__link {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 700;
+  text-decoration: none;
+  color: $basic-white;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 26px;
+    color: $basic-black;
+  }
+}
+
+.page-header__main-navigation__button-open {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  bottom: 155px;
+  right: 15px;
+  border: none;
+  display: block;
+  background-color: $basic-white;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 4px;
+    background-color: $sky-blue;
+    top: 0;
+    left: 0;
+    box-shadow: 0 8px 0 0 $sky-blue, 0 16px 0 0 $sky-blue;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.page-header__main-navigation__button-close {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 17px;
+  right: 15px;
+  border: none;
+  display: block;
+  background-color: $sky-blue;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 23px;
+    height: 4px;
+    background-color: $basic-white;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}

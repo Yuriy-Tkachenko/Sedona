@@ -1,0 +1,42 @@
+.main-modal-search__search-wrapper {
+  text-align: center;
+  padding: 0 30px 0 30px;
+}
+
+.main-modal-search__search-slogan {
+  @include title;
+  display: block;
+  margin-top: 33px;
+}
+
+.main-modal-search__search-description {
+  @include description;
+  text-align: center;
+  margin: 33px auto 27px auto;
+
+  @media (min-width: $tablet-width) {
+    max-width: 450px;
+  }
+}
+
+.main-modal-search__search-button {
+  @include title;
+  margin-bottom: 49px;
+  padding: 15px 68px;
+
+  @media (min-width: $tablet-width) {
+    padding: 15px 170px;
+    margin-bottom: 58px;
+  }
+}
+
+.button {
+  border: none;
+  color: $basic-white;
+  background-color: $sky-blue;
+  text-transform: uppercase;
+}
+
+.main-modal-search__search-map {
+  height: 350px;
+}
