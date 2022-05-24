@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Sedona</title>
+</head>
+<body class="page">
+  <header class="page-header container">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="img/main-logo-desktop@1x.png 1x, img/main-logo-desktop@2x.png 2x">
+        <source media="(min-width: 768px)" srcset="img/main-logo-tablet@1x.png 1x, img/main-logo-tablet@2x.png 2x">
+        <img class="header-logo" src="img/main-logo-mobile@1x.png" srcset="img/main-logo-mobile@2x.png" alt="Sedona's logotype">
+      </picture>
+      <button class="page-header__main-navigation__button-open" type="button">
+        <span class="visually-hidden">Open menu</span>
+      </button>
+      <nav class="page-header__main-navigation main-navigation--closed main-navigation--nojs">
+        <ul class="page-header__main-navigation__list">
+          <li class="page-header__main-navigation__item">
+            <a class="page-header__main-navigation__item__link" href="index.html">Main</a>
+          </li>
+          <li class="page-header__main-navigation__item">
+            <a class="page-header__main-navigation__item__link" href="catalog.html">Gallery</a>
+          </li>
+          <li class="page-header__main-navigation__item--space"></li>
+          <li class="page-header__main-navigation__item">
+            <a class="page-header__main-navigation__item__link">Feedback form</a>
+          </li>
+          <li class="page-header__main-navigation__item">
+            <a class="page-header__main-navigation__item__link" href="https:htmlacademy.ru">HTML Academy</a>
+          </li>
+        </ul>
+        <button class="page-header__main-navigation__button-close" type="button">
+          <span class="visually-hidden">Close menu</span>
+        </button>
+      </nav>
+    </header>
+    <main class="page-main">
+      <section class="feedback-form">
+        <h1 class="visually-hidden">Feedback form</h1>
+        <div class="feedback-form__offer">
+          <picture>
+            <source>
+            <img src="" alt="">
+          </picture>
+          <h2 class="feedback-form__title">Leave your feedback</h2>
+          <p class="feedback-form__description">Help our hotels become! Leave a review about them, as well as about the sights you have visited</p>
+        </div>
+        <div class="feedback-form__group">
+          <fieldset class="feedback-form__name">
+            <legend class="feedback-form__title">Introduce yourself:</legend>
+            <label class="feedback-form__label">Name:*<input type="text" name="name" placeholder="Petr"></label>
+            <label class="feedback-form__label">Surname:*<input type="text" name="surname" placeholder="Ivanov"></label>
+          </fieldset>
+          <fieldset class="feedback-form__contact-details">
+            <legend class="feedback-form__title">Contact informattion:</legend>
+            <label class="feedback-form__label">Phone:*<input type="text" name="phone" placeholder="Enter your phone"></label>
+            <label class="feedback-form__label">E-mail:*<input type="text" name="email" placeholder="Enter your e-mail"></label>
+          </fieldset>
+          <fieldset class="feedback-form__impression">
+            <legend class="feedback-form__title">Your impression:</legend>
+            <!--<ul class="feedback-form__impression-list">
+              <li class="feedback-form__impression-item">
+                <input class="feedback-form__checkbox" type="radio" name="impression" id="feedback-form__positive" checked>
+                <label for="feedback-form__positive">Positive</label>
+              </li>
+              <li class="feedback-form__impression-item">
+                <input class="feedback-form__checkbox" type="radio" name="impression" id="feedback-form__negative">
+                <label for="feedback-form__negative">Negative</label>
+              </li>
+              <li class="feedback-form__impression-item">
+                <input class="feedback-form__checkbox" type="radio" name="impression" id="feedback-form__dont-know">
+                <label for="feedback-form__dont-know">I don't know</label>
+              </li>
+            </ul>-->
+            <label class="feedback-form__radio"><input type="radio" name="impression">Positive</label>
+            <label class="feedback-form__radio"><input type="radio" name="impression">Negative</label>
+            <label class="feedback-form__radio"><input type="radio" name="impression">I don't know</label>
+          </fieldset>
+          <fieldset class="feedback-form__attractions">
+            <!--<ul class="feedback-form__attractions-list">
+              <li class="feedback-form__attraction-item">
+                <input class="feedback-form__checkbox" type="checkbox" name="Devil's bridge" id="feedback-form__devils-bridge" checked>
+                <label for="feedback-form__devils-bridge">Devil's bridge</label>
+              </li>
+              <li class="feedback-form__attraction-item">
+                <input class="feedback-form__checkbox" type="checkbox" name="Mount bell" id="feedback-form__mount-bell" checked>
+                <label for="feedback-form__mount-bell">Mount bell</label>
+              </li>
+              <li class="feedback-form__attraction-item"></li>
+              <li class="feedback-form__attraction-item"></li>
+            </ul>-->
+            <label class="feedback-form__checkbox"><input type="checkbox" name="attraction">Devil's bridge</label>
+            <label class="feedback-form__checkbox"><input type="checkbox" name="attraction">Mount bell</label>
+            <label class="feedback-form__checkbox"><input type="checkbox" name="attraction">Slide Park</label>
+            <label class="feedback-form__checkbox"><input type="checkbox" name="attraction">Red rocks</label>
+          </fieldset>
+          <fieldset class="feedback-form__description">
+            <legend class="feedback-form__title">Describe your emotions</legend>
+            <textarea class="fedback-form__area" cols="30" rows="10" placeholder="Describe in detail all your delights"></textarea>
+          </fieldset>
+          <button type="submit" class="feedback-form-button">Sent</button>
+        </div>
+      </section>
+    </main>
+
+</body>
+</html>
