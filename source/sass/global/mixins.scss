@@ -2,10 +2,21 @@
   font-size: 18px;
   line-height: 26px;
   font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 21px;
+  }
 }
 
 @mixin description {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
+}
+
+@mixin input {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: none;
 }
