@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Sedona</title>
+</head>
+<body class="page">
+  <header class="page-header container">
+      <picture>
+        <source media="(min-width: 1200px)" srcset="img/main-logo-desktop@1x.png 1x, img/main-logo-desktop@2x.png 2x">
+        <source media="(min-width: 768px)" srcset="img/main-logo-tablet@1x.png 1x, img/main-logo-tablet@2x.png 2x">
+        <img class="header-logo" src="img/main-logo-mobile@1x.png" srcset="img/main-logo-mobile@2x.png" alt="Sedona's logotype">
+      </picture>
+      <button class="page-header__main-navigation__button-open" type="button">
+        <span class="visually-hidden">Open menu</span>
+      </button>
+      <nav class="page-header__main-navigation main-navigation--closed main-navigation--nojs">
+        <ul class="page-header__main-navigation__list">
+          <li class="page-header__main-navigation__item">
+            <a class="page-header__main-navigation__item__link">Main</a>
+          </li>
+          <li class="page-header__main-navigation__item">
+            <a class="page-header__main-navigation__item__link" href="catalog.html">Gallery</a>
+          </li>
+          <li class="page-header__main-navigation__item--space"></li>
+          <li class="page-header__main-navigation__item">
+            <a class="page-header__main-navigation__item__link" href="form.html">Feedback form</a>
+          </li>
+          <li class="page-header__main-navigation__item">
+            <a class="page-header__main-navigation__item__link" href="https:htmlacademy.ru">HTML Academy</a>
+          </li>
+        </ul>
+        <button class="page-header__main-navigation__button-close" type="button">
+          <span class="visually-hidden">Close menu</span>
+        </button>
+      </nav>
+    </header>
+    <main class="page-main">
+      <section class="main-gallery">
+        <h1 class="visually-hidden">Gallery</h1>
+        <div class="main-gallery__offer">
+          <picture>
+            <source media="(min-width: 768px)" srcset="/img/background-tablet-desktop-city-name@1x.png 1x, /img/background-tablet-desktop-city-name@2x.png 2x">
+            <img class="main-gallery-city-name" src="/img/background-city-name@1x.png" srcset="/img/background-city-name@2x.png" alt="City name">
+          </picture>
+        </div>
+        <div class="main-gallery__slogan">
+          <h2 class="main-gallery__title feedback-form__title--big-size">Photo and video</h2>
+          <p class="main-gallery__description">Can't decide to travel because of the course? Photos will help you forget about politics and economics.</p>
+        </div>
+        <ul class="main-gallery__list">
+          <li class="main-gallery__item">
+            <picture>
+              <source media="(min-width: 768px)" srcset="">
+              <img class="main-gallery__image" src="" alt="sunset photo">
+            </picture>
+            <b class="main-gallery__item__caption">Native spaces</b>
+            <span class="main-gallery__item__description">Photo author: Boris</span>
+            <div class="main-gallery__item__likes-counter">
+              <button class="main-gallery__item__button" type="button">
+                <svg>
+                  <use></use>
+                </svg>
+              </button>
+              <span class="main-gallery__item__counter-value">1350</span>
+            </div>
+          </li>
+          <li class="main-gallery__item">
+            <picture>
+              <source media="(min-width: 768px)" srcset="">
+              <img class="main-gallery__image" src="" alt="sunset photo">
+            </picture>
+            <b class="main-gallery__item__caption">Local vegetation</b>
+            <span class="main-gallery__item__description">Photo author: Sergey</span>
+            <div class="main-gallery__item__likes-counter">
+              <button class="main-gallery__item__button" type="button">
+                <svg>
+                  <use></use>
+                </svg>
+              </button>
+              <span class="main-gallery__item__counter-value">143</span>
+            </div>
+          </li>
+          <li class="main-gallery__item">
+            <picture>
+              <source media="(min-width: 768px)" srcset="">
+              <img class="main-gallery__image" src="" alt="sunset photo">
+            </picture>
+            <b class="main-gallery__item__caption">The road to the north</b>
+            <span class="main-gallery__item__description">Photo author: Petr</span>
+            <div class="main-gallery__item__likes-counter">
+              <button class="main-gallery__item__button" type="button">
+                <svg>
+                  <use></use>
+                </svg>
+              </button>
+              <span class="main-gallery__item__counter-value">96</span>
+            </div>
+          </li>
+          <li class="main-gallery__item">
+            <picture>
+              <source media="(min-width: 768px)" srcset="">
+              <img class="main-gallery__image" src="" alt="sunset photo">
+            </picture>
+            <b class="main-gallery__item__caption">Devil's Bridge</b>
+            <span class="main-gallery__item__description">Photo author: Anton</span>
+            <div class="main-gallery__item__likes-counter">
+              <button class="main-gallery__item__button" type="button">
+                <svg>
+                  <use></use>
+                </svg>
+              </button>
+              <span class="main-gallery__item__counter-value">254</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="video-presentation">
+        <div class="video-presentation__slogan">
+          <h2 class="video-presentation__title video-presentation__title--big-size">Still in doubt?</h2>
+          <p class="video-presentation__description">Watch the video presentation and get tickets soon, before they go up in price once again!</p>
+        </div>
+      </section>
+    </main>
+</body>
+</html>
