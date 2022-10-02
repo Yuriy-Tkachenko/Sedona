@@ -8,16 +8,21 @@
 .header-logo {
   width: 100px;
   height: 84px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -50px;
+
 
   @media (min-width: $tablet-width) {
-    position: absolute;
-    left: 45%;
+    left: 50%;
     top: 0;
   }
 
   @media (min-width: $desktop-width) {
     width: 187px;
     height: 97px;
+    margin-left: -95px;
   }
 }
 

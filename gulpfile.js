@@ -87,16 +87,16 @@ const sprite = () => {
 
 exports.sprite = sprite;
 
-/*// Scripts
+// Scripts
 
 const scripts = () => {
-  return gulp.src("source/js/main-navigation.js")
+  return gulp.src(["source/js/map.js"])
     .pipe(terser())
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
 }
 
-exports.scripts = scripts;*/
+exports.scripts = scripts;
 
 // Copy
 
@@ -181,7 +181,7 @@ exports.default = gulp.series(
   gulp.parallel(
     styles,
     html,
-    /*scripts,*/
+    scripts,
     sprite,
     createWebp
   ),
