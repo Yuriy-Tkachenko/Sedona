@@ -84,7 +84,7 @@
   position: absolute;
   width: 23px;
   height: 23px;
-  bottom: 155px;
+  top: 240px;
   right: 15px;
   border: none;
   display: block;
@@ -138,6 +138,12 @@
   }
 
   @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+@media (min-width: $mobile-width-only) {
+  .main-navigation--nojs .page-header__main-navigation__button-close {
     display: none;
   }
 }
