@@ -13,7 +13,7 @@
         <source media="(min-width: 768px)" srcset="img/main-logo-tablet@1x.png 1x, img/main-logo-tablet@2x.png 2x">
         <img class="header-logo" src="img/main-logo-mobile@1x.png" srcset="img/main-logo-mobile@2x.png" alt="Sedona's logotype">
       </picture>
-      <button class="page-header__main-navigation__button-open" type="button">
+      <button class="page-header__main-navigation__button-open button-disable" type="button">
         <span class="visually-hidden">Open menu</span>
       </button>
       <nav class="page-header__main-navigation main-navigation--closed main-navigation--nojs">
@@ -50,47 +50,86 @@
           <h2 class="feedback-form__title feedback-form__title--big-size">Leave your feedback</h2>
           <p class="feedback-form__description">Help our hotels become! Leave a review about them, as well as about the sights you have visited</p>
         </div>
-        <div class="feedback-form-group">
+        <form class="feedback-form-group" method="post" action="#" autocomplete="off">
           <fieldset class="feedback-form__name feedback-form__fieldset">
             <legend class="feedback-form__title feedback-form__title--name-position">Introduce yourself:</legend>
-            <label class="feedback-form__label feedback-form__label--position">Name:*<input class="feedback-form__input" type="text" name="name" placeholder="Petr"></label>
-            <label class="feedback-form__label feedback-form__label--position">Surname:*<input class="feedback-form__input" type="text" name="surname" placeholder="Ivanov"></label>
+            <label class="feedback-form__label feedback-form__label--position">Name:*<input class="feedback-form__input" type="text" name="name" placeholder="Petr" required></label>
+            <label class="feedback-form__label feedback-form__label--position">Surname:*<input class="feedback-form__input" type="text" name="surname" placeholder="Ivanov" required></label>
           </fieldset>
           <fieldset class="feedback-form__contact-details feedback-form__fieldset">
             <legend class="feedback-form__title feedback-form__title--contact-posiiton">Contact informattion:</legend>
             <ul class="feedback-form__contact-list">
               <li class="feedback-form__contact-item">
                 <label class="feedback-form__label" for="phone-number">Phone:*</label>
-                <input class="feedback-form__input feedback-form__input--logo feedback-form__input--phone-logo" type="number" name="phone" id="phone-number" placeholder="Enter your phone">
+                <input class="feedback-form__input feedback-form__input--logo feedback-form__input--phone-logo" type="number" name="phone" id="phone-number" placeholder="Enter your phone" minlength="11" required>
               </li>
               <li class="feedback-form__contact-item">
                 <label class="feedback-form__label" for="e-mail">E-mail:*</label>
-                <input class="feedback-form__input feedback-form__input--logo feedback-form__input--mail-logo" type="email" name="e-mail" id="e-mail" placeholder="Enter your e-mail">
+                <input class="feedback-form__input feedback-form__input--logo feedback-form__input--mail-logo" type="email" name="e-mail" id="e-mail" placeholder="Enter your e-mail" required>
               </li>
             </ul>
           </fieldset>
           <fieldset class="feedback-form__impression feedback-form__fieldset">
             <legend class="feedback-form__title feedback-form__title--impression-posiiton">Your impression:</legend>
-            <label class="feedback-form__radio"><input type="radio" name="impression" checked>Positive</label>
-            <label class="feedback-form__radio"><input type="radio" name="impression">Negative</label>
-            <label class="feedback-form__radio"><input type="radio" name="impression">I don't know</label>
+            <ul class="feedback-form-radio__list">
+              <li class="feedback-form-radio__item" tabindex="0">
+                <input class="feedback-form__radio-input visually-hidden" type="radio" name="impression" value="positive" id="feedback-form__positive-reaction" checked>
+                <label class="feedback-form__radio" for="feedback-form__positive-reaction">Positive</label>
+              </li>
+              <li class="feedback-form-radio__item" tabindex="0">
+                <input class="feedback-form__radio-input visually-hidden" type="radio" name="impression" value="negative" id="feedback-form__negative-reaction">
+                <label class="feedback-form__radio" for="feedback-form__negative-reaction">Negative</label>
+              </li>
+              <li class="feedback-form-radio__item" tabindex="0">
+                <input class="feedback-form__radio-input visually-hidden" type="radio" name="impression" value="without impression" id="feedback-form__nothing-reaction">
+                <label class="feedback-form__radio" for="feedback-form__nothing-reaction">I don't know</label>
+              </li>
+            </ul>
           </fieldset>
           <fieldset class="feedback-form__attractions feedback-form__fieldset">
             <legend class="feedback-form__title feedback-form__title--attraction-posiiton">Visited attractions:</legend>
-            <div class="feedback-form-checkbox-wrapper">
-              <label class="feedback-form__checkbox"><input type="checkbox" name="attraction" checked>Devil's bridge</label>
-              <label class="feedback-form__checkbox"><input type="checkbox" name="attraction" checked>Mount bell</label>
-              <label class="feedback-form__checkbox"><input type="checkbox" name="attraction" checked>Slide Park</label>
-              <label class="feedback-form__checkbox"><input type="checkbox" name="attraction">Red rocks</label>
-            </div>
+            <ul class="feedback-form-checkbox-list">
+              <li class="feedback-form-checkbox-item" tabindex="0">
+                <input class="feedback-form__checkbox-input visually-hidden" type="checkbox" name="attraction" id="feedback-form__bridge" checked>
+                <label class="feedback-form__checkbox" for="feedback-form__bridge">Devil's bridge</label>
+              </li>
+              <li class="feedback-form-checkbox-item" tabindex="0">
+                <input class="feedback-form__checkbox-input visually-hidden" type="checkbox" name="attraction" id="feedback-form__bell" checked>
+                <label class="feedback-form__checkbox" for="feedback-form__bell">Mount bell</label>
+              </li>
+              <li class="feedback-form-checkbox-item" tabindex="0">
+                <input class="feedback-form__checkbox-input visually-hidden" type="checkbox" name="attraction" id="feedback-form__park" checked>
+                <label class="feedback-form__checkbox" for="feedback-form__park">Slide Park</label>
+              </li>
+              <li class="feedback-form-checkbox-item" tabindex="0">
+                <input class="feedback-form__checkbox-input visually-hidden" type="checkbox" name="attraction" id="feedback-form__rocks">
+                <label class="feedback-form__checkbox" for="feedback-form__rocks">Red rocks</label>
+              </li>
+            </ul>
           </fieldset>
           <fieldset class="feedback-form__area-description feedback-form__fieldset">
             <legend class="feedback-form__title feedback-form__title--description-posiiton">Describe your emotions</legend>
-            <textarea class="feedback-form__area" cols="30" rows="10" placeholder="Describe in detail all your delights"></textarea>
+            <textarea class="feedback-form__area" cols="30" rows="10" placeholder="Describe in detail all your delights" minlength="2" maxlength="25"></textarea>
           </fieldset>
           <div class="feedback-form__button-wrapper">
             <button class="feedback-form-button button" type="submit" class="feedback-form-button">Sent</button>
-            <span class="feedback-form__note">* — обязательные поля</span>
+            <span class="feedback-form__note">* — required fields</span>
+          </div>
+        </form>
+      </section>
+      <section class="modal-popup">
+        <div class="modal-popup__successfull modal-popup__successfull--position modal-popup__hidden">
+          <div class="modal-popup__wrapper">
+            <h3 class="modal-popup__caption">Your feedback has been sent!</h3>
+            <p class="modal-popup__description">Thank you for your participation, your feedback has already been received by us. We will publish it on the website soon.</p>
+            <button type="button" class="modal-popup__button button">Close</button>
+          </div>
+        </div>
+        <div class="modal-popup__unsuccessfull modal-popup__unsuccessfull--position modal-popup__hidden">
+          <div class="modal-popup__wrapper">
+            <h3 class="modal-popup__caption">Something wrong!</h3>
+            <p class="modal-popup__description">Check the fields highlighted in red, most likely you forgot to fill them in</p>
+            <button type="button" class="modal-popup__button button">Ok</button>
           </div>
         </div>
       </section>
@@ -133,5 +172,7 @@
         </svg>
       </a>
     </footer>
+    <script src="js/navigation.js"></script>
+    <script src="js/form.js"></script>
 </body>
 </html>

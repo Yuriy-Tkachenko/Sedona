@@ -11,7 +11,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 0 125px;
+    padding: 0 120px;
   }
 }
 
@@ -164,14 +164,45 @@
 
 .feedback-form__radio {
   @include input;
-  text-align: start;
-  margin-bottom: 43px;
 }
 
 .feedback-form__radio:last-child {
   @media(min-width: $tablet-width) {
     margin-bottom: 0;
   }
+}
+
+.feedback-form-radio__list {
+  min-height: 164px;
+}
+
+.feedback-form-radio__item {
+  position: relative;
+  margin-bottom: 43px;
+  text-align: left;
+  padding-left: 78px;
+}
+
+.feedback-form__radio-input + label::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 10px;
+  top: -8px;
+  background-color: $light-grey;
+  border-radius: 50%;
+}
+
+.feedback-form__radio-input:checked + label::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: $dark-grey;
+  border-radius: 50%;
+  top: 8px;
+  left: 26px;
 }
 
 .feedback-form__attractions {
@@ -208,18 +239,65 @@
   }
 }
 
-.feedback-form__checkbox {
-  @include input;
-  text-align: start;
-  margin-bottom: 54px;
+.feedback-form-checkbox-list {
+  min-height: 286px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media(min-width: $tablet-width) {
+    max-width: 473px;
+    min-height: 143px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media(min-width: $desktop-width) {
+    min-width: 960px;
+  }
+}
+
+.feedback-form-checkbox-item {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  flex-basis: 0;
+  flex-grow: 1;
 
   @media (min-width: $tablet-width) {
-    margin-right: 50px;
+    min-width: 215px;
   }
+}
+
+.feedback-form__checkbox {
+  padding-left: 80px;
+  position: relative;
+  align-self: flex-start;
+  @include input;
 
   @media (min-width: $desktop-width) {
     margin-right: 0;
   }
+}
+
+.feedback-form__checkbox-input + label::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: -8px;
+    width: 46px;
+    height: 46px;
+    background-color: $light-grey;
+}
+
+.feedback-form__checkbox-input:checked + label::after {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 16px;
+  background-image: url("/img/tick.svg");
+  left: 11px;
+  top: 5px;
 }
 
 .feedback-form__area-description {

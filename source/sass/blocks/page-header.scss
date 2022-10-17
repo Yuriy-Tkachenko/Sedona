@@ -84,7 +84,7 @@
   position: absolute;
   width: 23px;
   height: 23px;
-  top: 240px;
+  top: 18px;
   right: 15px;
   border: none;
   display: block;
@@ -142,8 +142,21 @@
   }
 }
 
-@media (min-width: $mobile-width-only) {
+@media (max-width: $mobile-width-only) {
   .main-navigation--nojs .page-header__main-navigation__button-close {
+    display: none;
+  }
+
+  .main-navigation--closed .page-header__main-navigation__list {
+    display: none;
+  }
+
+  .main-navigation--nojs .page-header__main-navigation__list {
+    display: block;
+    position: static;
+  }
+
+  .button-disable {
     display: none;
   }
 }

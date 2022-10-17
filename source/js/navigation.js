@@ -1,23 +1,21 @@
-const mainNavigation = document.querySelector('.page-header__main-navigation');
+const mainNav = document.querySelector('.page-header__main-navigation');
 const buttonOpen = document.querySelector('.page-header__main-navigation__button-open');
 const buttonClose = document.querySelector('.page-header__main-navigation__button-close');
 
-mainNavigation.classList.remove('main-navigation--nojs');
+mainNav.classList.remove('main-navigation--nojs');
+buttonClose.classList.add('button-disable');
+buttonOpen.classList.remove('button-disable');
 
-buttonOpen.addEventListener('click', function () {
-  buttonClose.style.display = 'none';
-
-  if (mainNavigation.classList.contains('main-navigation--closed')) {
-    mainNavigation.classList.remove('main-navigation--closed');
-    mainNavigation.classList.add('page-header__main-navigation');
+buttonOpen.addEventListener('click', function() {
+  if(mainNav.classList.contains('main-navigation--closed')) {
+    mainNav.classList.remove('main-navigation--closed');
+    buttonOpen.classList.add('button-disable');
+    buttonClose.classList.remove('button-disable');
   }
 });
 
-buttonClose.addEventListener('click', function () {
-  buttonClose.style.display = 'block';
-
-  if (mainNavigation.classList.contains('page-header__main-navigation')) {
-    mainNavigation.classList.add('main-navigation--closed');
-    mainNavigation.classList.remove('page-header__main-navigation');
-  }
+buttonClose.addEventListener('click', function() {
+  mainNav.classList.add('main-navigation--closed');
+  buttonClose.classList.add('button-disable');
+  buttonOpen.classList.remove('button-disable');
 });

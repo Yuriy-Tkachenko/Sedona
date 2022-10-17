@@ -218,6 +218,13 @@
   margin-right: 14px;
 }
 
+.main-gallery__item__button-icon {
+  @media (min-width: $desktop-width) {
+    stroke: $basic-white;
+    fill: $basic-white;
+  }
+}
+
 .main-gallery__item__counter-value {
   font-weight: 700;
 }

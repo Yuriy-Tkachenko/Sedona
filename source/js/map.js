@@ -28,26 +28,3 @@ const mainPinMarker = L.marker(
 );
 
 mainPinMarker.addTo(map);
-
-const mainNavigation = document.querySelector('.page-header__main-navigation');
-const buttonOpen = document.querySelector('.page-header__main-navigation__button-open');
-const buttonClose = document.querySelector('.page-header__main-navigation__button-close');
-
-mainNavigation.classList.remove('main-navigation--closed');
-buttonClose.style.display = 'none';
-
-buttonOpen.addEventListener('click', function () {
-  if (mainNavigation.classList.contains('main-navigation--closed')) {
-    mainNavigation.classList.remove('main-navigation--closed');
-    mainNavigation.classList.add('page-header__main-navigation');
-  }
-});
-
-buttonClose.style.display = 'block';
-
-buttonClose.addEventListener('click', function () {
-  if (mainNavigation.classList.contains('page-header__main-navigation')) {
-    mainNavigation.classList.add('main-navigation--closed');
-    mainNavigation.classList.remove('page-header__main-navigation');
-  }
-});

@@ -90,7 +90,7 @@ exports.sprite = sprite;
 // Scripts
 
 const scripts = () => {
-  return gulp.src(["source/js/map.js"])
+  return gulp.src(["source/js/*.js"])
     .pipe(terser())
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());
