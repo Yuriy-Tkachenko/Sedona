@@ -1,0 +1,1 @@
+const likeNumbers=Array.from(document.querySelectorAll(".main-gallery__item__counter-value")),heartButtons=Array.from(document.querySelectorAll(".main-gallery__item__button"));heartButtons.forEach(((e,t)=>{e.addEventListener("click",(function(){e.classList.toggle("added"),e.classList.contains("added")?likeNumbers[t].textContent++:likeNumbers[t].textContent--}))}));
