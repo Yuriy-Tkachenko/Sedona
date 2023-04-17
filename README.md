@@ -1,4 +1,4 @@
-## Website for construction company "DB"
+## Website for book hotels in Sedona city
 
 ### Description:
 This website was created for a hotel in Sedona city, as part of training my skills in developing adaptive websites.
