@@ -1,3 +1,15 @@
+.main-gallery {
+  margin-bottom: 32px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 58px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 63px;
+  }
+}
+
 .main-gallery__offer {
   height: 160px;
   background-image: url("/img/main-mobile-decor-element.svg"), url(/img/background-form@1x.jpg);
@@ -220,7 +232,6 @@
 
 .main-gallery__item__button-icon {
   @media (min-width: $desktop-width) {
-    stroke: $basic-white;
     fill: $basic-white;
   }
 }

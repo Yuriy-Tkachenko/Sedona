@@ -158,33 +158,9 @@
           <p class="video-presentation__description">Watch the video presentation and get tickets soon, before they go up in price once again!</p>
         </div>
         <div class="video-presentation__player">
-          <picture>
-            <source type="image/webp" media="(min-width: 1200px)" srcset="img/video-desktop@1x.webp 1x, img/video-desktop@2x.webp 2x" width="800" height="500">
-            <source type="image/webp" media="(min-width: 768px)" srcset="img/video-tablet@1x.webp 1x, img/video-tablet@2x.webp 2x" width="648" height="500">
-            <source type="image/webp" srcset="img/video-mobile@1x.webp 1x, img/video-mobile@2x.webp 2x" width="320" height="200">
-            <source media="(min-width: 1200px)" srcset="img/video-desktop@1x.jpg 1x, img/video-desktop@2x.jpg 2x" width="800" height="500">
-            <source media="(min-width: 768px)" srcset="img/video-tablet@1x.jpg 1x, img/video-tablet@2x.jpg 2x" width="648" height="500">
-            <img class="video-presentation__image" src="img/video-mobile@1x.jpg" srcset="img/video-mobile@2x.jpg" alt="video about Sedona city" width="320" height="200">
-          </picture>
-          <div class="video-presentation__video-bar">
-            <div class="video-presentation__range-control">
-              <div class="video-presentation__scale" tabindex="0">
-                <div class="video-presentation__bar"></div>
-              </div>
-            </div>
-            <div class="video-presentation__button-bar">
-              <svg class="video-presentation__replay" tabindex="0" width="16" height="20">
-                <use href="img/sprite.svg#replay"></use>
-              </svg>
-              <svg class="video-presentation__subtitles" tabindex="0" width="32" height="20">
-                <use href="img/sprite.svg#subtitles"></use>
-              </svg>
-              <svg class="video-presentation__fullscreen" tabindex="0" width="20" height="20">
-                <use href="img/sprite.svg#fullscreen"></use>
-              </svg>
-            </div>
-          </div>
+          <iframe class="video-frame" src="https://www.youtube.com/embed/ZSZhfZ9hgpA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
+        
       </section>
     </main>
     <footer class="main-footer container">

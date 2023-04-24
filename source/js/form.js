@@ -1,4 +1,5 @@
 const form = document.querySelector('.feedback-form-group');
+const sentButton = form.querySelector('.feedback-form-button');
 const popup = document.querySelector('.modal-popup');
 const successPopup = popup.querySelector('.modal-popup__successfull');
 const successPopupButton = successPopup.querySelector('.modal-popup__button');
@@ -11,4 +12,8 @@ successPopupButton.addEventListener('click', function () {
 
 unsuccessPopupButton.addEventListener('click', function () {
   unsuccessPopup.classList.add('modal-popup__hidden');
+})
+
+sentButton.addEventListener('submit', function(evt) {
+  form.preventDefault();
 })

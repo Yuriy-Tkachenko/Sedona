@@ -81,9 +81,14 @@
 }
 
 .feedback-form__input {
+  @include input;
   border: none;
   background-color: $light-grey;
   padding: 20px 22px 15px 22px;
+
+  &:placeholder {
+    color: $dark-grey;
+  }
 
   @media (min-width: $tablet-width) {
     min-width: 315px;
@@ -92,11 +97,6 @@
 
 .feedback-form__input--logo {
   position: relative;
-}
-
-.feedback-form__input::placeholder {
-  color: $basic-black;
-  @include input;
 }
 
 .feedback-form__contact-details {
@@ -319,14 +319,12 @@
 
 .feedback-form__area{
   width: 100%;
-  border: none;
-  background-color: $light-grey;
-  margin-bottom: 51px;
-}
-
-.feedback-form__area::placeholder {
-  @include input;
   font-family: "PTSans";
   color: $basic-black;
+  @include input;
   padding: 13px 20px;
+  border: none;
+  resize: none;
+  background-color: $light-grey;
+  margin-bottom: 51px;
 }
