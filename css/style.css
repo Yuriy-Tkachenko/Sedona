@@ -244,7 +244,7 @@ fieldset {
 .main-offer__slogan__wrapper {
   width: 100%;
   height: 390px;
-  background-image: url("/img/main-mobile-decor-element.svg"), url("/img/main-background-mobile@1x.jpg");
+  background-image: url("img/main-mobile-decor-element.svg"), url("img/main-background-mobile@1x.jpg");
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, center top;
@@ -254,29 +254,29 @@ fieldset {
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .main-offer__slogan__wrapper {
-    background-image: url("/img/main-mobile-decor-element.svg"), url("/img/main-background-mobile@2x.jpg");
+    background-image: url("img/main-mobile-decor-element.svg"), url("img/main-background-mobile@2x.jpg");
   }
 }
 @media (min-width: 768px) {
   .main-offer__slogan__wrapper {
-    background-image: url("/img/main-tablet-decor-element.svg"), url("/img/main-background-tablet@1x.jpg");
+    background-image: url("img/main-tablet-decor-element.svg"), url("img/main-background-tablet@1x.jpg");
     height: 518px;
     margin: 0;
   }
 }
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 2dppx) {
   .main-offer__slogan__wrapper {
-    background-image: url("/img/main-tablet-decor-element.svg"), url("/img/main-background-tablet@2x.jpg");
+    background-image: url("img/main-tablet-decor-element.svg"), url("img/main-background-tablet@2x.jpg");
   }
 }
 @media (min-width: 1200px) {
   .main-offer__slogan__wrapper {
-    background-image: url("/img/main-desktop-decor-element.svg"), url("/img/main-background-desktop@1x.jpg");
+    background-image: url("img/main-desktop-decor-element.svg"), url("img/main-background-desktop@1x.jpg");
   }
 }
 @media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 2dppx) {
   .main-offer__slogan__wrapper {
-    background-image: url("/img/main-desktop-decor-element.svg"), url("/img/main-background-desktop@2x.jpg");
+    background-image: url("img/main-desktop-decor-element.svg"), url("img/main-background-desktop@2x.jpg");
   }
 }
 
@@ -445,29 +445,29 @@ fieldset {
 }
 
 .main-features__item--house-logo::before {
-  background-image: url("/img/icon-house-mobile.svg");
+  background-image: url("img/icon-house-mobile.svg");
 }
 @media (min-width: 768px) {
   .main-features__item--house-logo::before {
-    background-image: url("/img/icon-house-tablet&desktop.svg");
+    background-image: url("img/icon-house-tablet&desktop.svg");
   }
 }
 
 .main-features__item--food-logo::before {
-  background-image: url("/img/icon-burger-mobile.svg");
+  background-image: url("img/icon-burger-mobile.svg");
 }
 @media (min-width: 768px) {
   .main-features__item--food-logo::before {
-    background-image: url("/img/icon-burger-tablet&desktop.svg");
+    background-image: url("img/icon-burger-tablet&desktop.svg");
   }
 }
 
 .main-features__item--souvenirs-logo::before {
-  background-image: url("/img/icon-gift-mobile.svg");
+  background-image: url("img/icon-gift-mobile.svg");
 }
 @media (min-width: 768px) {
   .main-features__item--souvenirs-logo::before {
-    background-image: url("/img/icon-gift-tablet&desktop.svg");
+    background-image: url("img/icon-gift-tablet&desktop.svg");
   }
 }
 
@@ -663,7 +663,7 @@ fieldset {
 
 .feedback-form__offer {
   height: 160px;
-  background-image: url("/img/main-mobile-decor-element.svg"), url(/img/background-form@1x.jpg);
+  background-image: url("img/main-mobile-decor-element.svg"), url(img/background-form@1x.jpg);
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, center top;
@@ -671,28 +671,28 @@ fieldset {
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .feedback-form__offer {
-    background-image: url("/img/main-mobile-decor-element.svg"), url(/img/background-form@2x.jpg);
+    background-image: url("img/main-mobile-decor-element.svg"), url(img/background-form@2x.jpg);
   }
 }
 @media (min-width: 768px) {
   .feedback-form__offer {
     height: 300px;
-    background-image: url("/img/main-tablet-decor-element.svg"), url(/img/background-form-desktop@1x.jpg);
+    background-image: url("img/main-tablet-decor-element.svg"), url(img/background-form-desktop@1x.jpg);
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .feedback-form__offer {
-    background-image: url("/img/main-tablet-decor-element.svg"), url(/img/background-form-desktop@2x.jpg);
+    background-image: url("img/main-tablet-decor-element.svg"), url(img/background-form-desktop@2x.jpg);
   }
 }
 @media (min-width: 1200px) {
   .feedback-form__offer {
-    background-image: url("/img/main-desktop-decor-element.svg"), url(/img/background-form-desktop@1x.jpg);
+    background-image: url("img/main-desktop-decor-element.svg"), url(img/background-form-desktop@1x.jpg);
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .feedback-form__offer {
-    background-image: url("/img/main-desktop-decor-element.svg"), url(/img/background-form-desktop@2x.jpg);
+    background-image: url("img/main-desktop-decor-element.svg"), url(img/background-form-desktop@2x.jpg);
   }
 }
 
@@ -1083,7 +1083,7 @@ fieldset {
   position: absolute;
   width: 23px;
   height: 16px;
-  background-image: url("/img/tick.svg");
+  background-image: url("img/tick.svg");
   left: 11px;
   top: 5px;
 }
@@ -1168,7 +1168,7 @@ fieldset {
 
 .main-gallery__offer {
   height: 160px;
-  background-image: url("/img/main-mobile-decor-element.svg"), url(/img/background-form@1x.jpg);
+  background-image: url("img/main-mobile-decor-element.svg"), url(img/background-form@1x.jpg);
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, center top;
@@ -1177,29 +1177,29 @@ fieldset {
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .main-gallery__offer {
-    background-image: url("/img/main-mobile-decor-element.svg"), url(/img/background-form@2x.jpg);
+    background-image: url("img/main-mobile-decor-element.svg"), url(img/background-form@2x.jpg);
   }
 }
 @media (min-width: 768px) {
   .main-gallery__offer {
     height: 300px;
-    background-image: url("/img/main-tablet-decor-element.svg"), url(/img/background-form-desktop@1x.jpg);
+    background-image: url("img/main-tablet-decor-element.svg"), url(img/background-form-desktop@1x.jpg);
     margin-top: 0;
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .main-gallery__offer {
-    background-image: url("/img/main-tablet-decor-element.svg"), url(/img/background-form-desktop@2x.jpg);
+    background-image: url("img/main-tablet-decor-element.svg"), url(img/background-form-desktop@2x.jpg);
   }
 }
 @media (min-width: 1200px) {
   .main-gallery__offer {
-    background-image: url("/img/main-desktop-decor-element.svg"), url(/img/background-form-desktop@1x.jpg);
+    background-image: url("img/main-desktop-decor-element.svg"), url(img/background-form-desktop@1x.jpg);
   }
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
   .main-gallery__offer {
-    background-image: url("/img/main-desktop-decor-element.svg"), url(/img/background-form-desktop@2x.jpg);
+    background-image: url("img/main-desktop-decor-element.svg"), url(img/background-form-desktop@2x.jpg);
   }
 }
 
