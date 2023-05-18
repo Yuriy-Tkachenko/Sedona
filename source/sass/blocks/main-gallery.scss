@@ -12,7 +12,7 @@
 
 .main-gallery__offer {
   height: 160px;
-  background-image: url("/img/main-mobile-decor-element.svg"), url(/img/background-form@1x.jpg);
+  background-image: url("../img/main-mobile-decor-element.svg"), url("../img/background-form@1x.jpg");
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, center top;
@@ -20,25 +20,25 @@
   margin-top: 56px;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("/img/main-mobile-decor-element.svg"), url(/img/background-form@2x.jpg);
+    background-image: url("../img/main-mobile-decor-element.svg"), url("../img/background-form@2x.jpg");
   }
 
   @media (min-width: $tablet-width) {
     height: 300px;
-    background-image: url("/img/main-tablet-decor-element.svg"), url(/img/background-form-desktop@1x.jpg);
+    background-image: url("../img/main-tablet-decor-element.svg"), url("../img/background-form-desktop@1x.jpg");
     margin-top: 0;
   }
 
   @media (min-resolution: 2dppx) {
-    background-image: url("/img/main-tablet-decor-element.svg"), url(/img/background-form-desktop@2x.jpg);
+    background-image: url("../img/main-tablet-decor-element.svg"), url("../img/background-form-desktop@2x.jpg");
   }
 
   @media (min-width: $desktop-width) {
-    background-image: url("/img/main-desktop-decor-element.svg"), url(/img/background-form-desktop@1x.jpg);
+    background-image: url("../img/main-desktop-decor-element.svg"), url("../img/background-form-desktop@1x.jpg");
   }
 
   @media (min-resolution: 2dppx) {
-    background-image: url("/img/main-desktop-decor-element.svg"), url(/img/background-form-desktop@2x.jpg);
+    background-image: url("../img/main-desktop-decor-element.svg"), url("../img/background-form-desktop@2x.jpg");
   }
 }
 
