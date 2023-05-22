@@ -1,7 +1,7 @@
 .main-offer__slogan__wrapper {
   width: 100%;
   height: 390px;
-  background-image: url("../img/main-mobile-decor-element.svg"), url("../img/main-background-mobile@1x.jpg");
+  background-image: url("../../img/main-mobile-decor-element.svg"), url("../../img/main-background-mobile@1x.jpg");
   background-size: auto, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, center top;
@@ -10,24 +10,24 @@
   position: relative;
 
   @media (min-resolution: 2dppx) {
-    background-image: url("../img/main-mobile-decor-element.svg"), url("../img/main-background-mobile@2x.jpg");
+    background-image: url("../../img/main-mobile-decor-element.svg"), url("../../img/main-background-mobile@2x.jpg");
   }
 
   @media (min-width: $tablet-width) {
-    background-image: url("../img/main-tablet-decor-element.svg"), url("../img/main-background-tablet@1x.jpg");
+    background-image: url("../../img/main-tablet-decor-element.svg"), url("../../img/main-background-tablet@1x.jpg");
     height: 518px;
     margin: 0;
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/main-tablet-decor-element.svg"), url("../img/main-background-tablet@2x.jpg");
+      background-image: url("../../img/main-tablet-decor-element.svg"), url("../../img/main-background-tablet@2x.jpg");
     }
   }
 
   @media (min-width: $desktop-width) {
-    background-image: url("../img/main-desktop-decor-element.svg"), url("../img/main-background-desktop@1x.jpg");
+    background-image: url("../../img/main-desktop-decor-element.svg"), url("../../img/main-background-desktop@1x.jpg");
 
     @media (min-resolution: 2dppx) {
-      background-image: url("../img/main-desktop-decor-element.svg"), url("../img/main-background-desktop@2x.jpg");
+      background-image: url("../../img/main-desktop-decor-element.svg"), url("../../img/main-background-desktop@2x.jpg");
     }
   }
 }

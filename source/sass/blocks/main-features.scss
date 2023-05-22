@@ -23,10 +23,6 @@
     align-items: center;
     border: none;
   }
-
-  @media (min-width: $desktop-width) {
-
-  }
 }
 
 .main-features__item__text-wrapper {
@@ -107,30 +103,30 @@
 
 .main-features__item--house-logo {
   &::before {
-    background-image: url("/img/icon-house-mobile.svg");
+    background-image: url("../../img/icon-house-mobile.svg");
 
     @media (min-width: $tablet-width) {
-      background-image: url("/img/icon-house-tablet&desktop.svg");
+      background-image: url("../../img/icon-house-tablet&desktop.svg");
     }
   }
 }
 
 .main-features__item--food-logo {
   &::before {
-    background-image: url("/img/icon-burger-mobile.svg");
+    background-image: url("../../img/icon-burger-mobile.svg");
 
     @media (min-width: $tablet-width) {
-      background-image: url("/img/icon-burger-tablet&desktop.svg");
+      background-image: url("../../img/icon-burger-tablet&desktop.svg");
     }
   }
 }
 
 .main-features__item--souvenirs-logo {
   &::before {
-    background-image: url("/img/icon-gift-mobile.svg");
+    background-image: url("../../img/icon-gift-mobile.svg");
 
     @media (min-width: $tablet-width) {
-      background-image: url("/img/icon-gift-tablet&desktop.svg");
+      background-image: url("../../img/icon-gift-tablet&desktop.svg");
     }
   }
 }
