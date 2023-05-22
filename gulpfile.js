@@ -1,191 +1,151 @@
-const gulp = require("gulp");
-const plumber = require("gulp-plumber");
-const sourcemap = require("gulp-sourcemaps");
-const sass = require("gulp-sass")(require("sass"));
-//const sass = require("gulp-sass");
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const csso = require("postcss-csso");
-const sync = require("browser-sync").create();
-const htmlmin = require("gulp-htmlmin");
-const rename = require("gulp-rename");
-const webp = require("gulp-webp");
-const svgstore = require("gulp-svgstore");
-const imagemin = require("gulp-imagemin");
-const terser = require("gulp-terser");
-const del = require("del");
-const { src } = require("gulp");
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import gulpIf from 'gulp-if';
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
+import postcss from 'gulp-postcss';
+import postUrl from 'postcss-url';
+import autoprefixer from 'autoprefixer';
+import csso from 'postcss-csso';
+import terser from 'gulp-terser';
+import squoosh from 'gulp-libsquoosh';
+import svgo from 'gulp-svgmin';
+import { stacksvg } from "gulp-stacksvg";
+import { deleteAsync } from 'del';
+import browser from 'browser-sync';
+import bemlinter from 'gulp-html-bemlinter';
+import { htmlValidator } from "gulp-w3c-html-validator";
 
-// HTML
+const sass = gulpSass(dartSass);
+let isDevelopment = true;
 
-const html = () => {
-  return gulp.src("source/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("build"));
+export function processMarkup () {
+  return gulp.src('source/*.html')
+    .pipe(gulp.dest('build'));
 }
 
-exports.html = html;
+export function lintBem () {
+  return gulp.src('source/*.html')
+    .pipe(bemlinter());
+}
 
-// Styles
+export function validateMarkup () {
+  return gulp.src('source/*.html')
+		.pipe(htmlValidator.analyzer())
+		.pipe(htmlValidator.reporter({ throwErrors: true }));
+}
 
-const styles = () => {
-  return gulp.src("source/sass/style.scss")
+export function processStyles () {
+  return gulp.src('source/sass/*.scss', { sourcemaps: isDevelopment })
     .pipe(plumber())
-    .pipe(sourcemap.init())
-    .pipe(sass())
-    .pipe(postcss([autoprefixer()]))
-    .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
-    .pipe(sync.stream());
-};
-
-exports.styles = styles;
-
-// Images
-
-const optimizeImages = () => {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
-    .pipe(imagemin([
-      imagemin.mozjpeg({ quality: 75, progressive: true }),
-      imagemin.optipng({ optimizationLevel: 3 }),
-      imagemin.svgo()
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([
+      postUrl({ assetsPath: '../' }),
+      autoprefixer(),
+      csso()
     ]))
-    .pipe(gulp.dest("build/img"))
+    .pipe(gulp.dest('build/css', { sourcemaps: isDevelopment }))
+    .pipe(browser.stream());
 }
 
-exports.optimizeImages = optimizeImages;
-
-const copyImages = () => {
-  return gulp.src("source/img/**/*.{png,jpg,svg}")
-    .pipe(gulp.dest("build/img"))
-}
-
-exports.copyImages = copyImages;
-
-// WebP
-
-const createWebp = () => {
-  return gulp.src("source/img/**/*.{jpg,png}")
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest("build/img"))
-}
-
-exports.createWebp = createWebp;
-
-// Sprite
-
-const sprite = () => {
-  return gulp.src("source/img/icons-sprite/*.svg")
-    .pipe(
-      svgstore({
-        inlineSvg: true,
-      })
-    )
-    .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("build/img"));
-};
-
-exports.sprite = sprite;
-
-// Scripts
-
-const scripts = () => {
-  return gulp.src(["source/js/*.js"])
+export function processScripts () {
+  return gulp.src('source/js/**/*.js')
     .pipe(terser())
-    .pipe(gulp.dest("build/js"))
-    .pipe(sync.stream());
+    .pipe(gulp.dest('build/js'))
+    .pipe(browser.stream());
 }
 
-exports.scripts = scripts;
+export function optimizeImages () {
+  return gulp.src('source/img/**/*.{png,jpg}')
+    .pipe(gulpIf(!isDevelopment, squoosh()))
+    .pipe(gulp.dest('build/img'))
+}
 
-// Copy
+export function createWebp () {
+  return gulp.src('source/img/**/*.{png,jpg}')
+    .pipe(squoosh({
+      webp: {}
+    }))
+    .pipe(gulp.dest('build/img'))
+}
 
-const copy = (done) => {
-  gulp.src([
-    "source/fonts/*.{wof2,woff}",
-    "source/*.ico",
-    "source/img/**/*.svg",
-    "!source/img/favicons/*.svg",
+export function optimizeVector () {
+  return gulp.src(['source/img/**/*.svg', '!source/img/icons/**/*.svg'])
+    .pipe(svgo())
+    .pipe(gulp.dest('build/img'));
+}
+
+export function createStack () {
+  return gulp.src('source/img/icons/**/*.svg')
+    .pipe(svgo())
+    .pipe(stacksvg())
+    .pipe(gulp.dest('build/img/icons'));
+}
+
+export function copyAssets () {
+  return gulp.src([
+    'source/fonts/**/*.{woff2,woff}',
+    'source/*.ico',
+    'source/*.webmanifest',
   ], {
-    base: "source"
+    base: 'source'
   })
-    .pipe(gulp.dest("build"))
-  done();
+    .pipe(gulp.dest('build'));
 }
 
-exports.copy = copy;
-
-// Clean
-
-const clean = () => {
-  return del("build")
-}
-
-exports.clean = clean;
-
-// Server
-
-const server = (done) => {
-  sync.init({
+export function startServer (done) {
+  browser.init({
     server: {
-      baseDir: "build",
+      baseDir: 'build'
     },
     cors: true,
     notify: false,
     ui: false,
   });
   done();
-};
+}
 
-exports.server = server;
-
-// Watcher
-
-const watcher = () => {
-  gulp.watch("source/sass/**/*.scss", gulp.series("styles"));
-  gulp.watch("source/*.html").on("change", sync.reload);
-};
-
-exports.default = gulp.series(styles, server, watcher);
-
-//Reload
-
-const reload = (done) => {
-  sync.reload();
+function reloadServer (done) {
+  browser.reload();
   done();
 }
 
-//Build
+function watchFiles () {
+  gulp.watch('source/sass/**/*.scss', gulp.series(processStyles));
+  gulp.watch('source/js/script.js', gulp.series(processScripts));
+  gulp.watch('source/*.html', gulp.series(processMarkup, reloadServer));
+}
 
-const build = gulp.series(
-  clean,
-  copy,
-  optimizeImages,
+function compileProject (done) {
   gulp.parallel(
-    styles,
-    html,
-    scripts,
-    sprite,
+    processMarkup,
+    processStyles,
+    processScripts,
+    optimizeVector,
+    createStack,
+    copyAssets,
+    optimizeImages,
     createWebp
-  ),
-);
+  )(done);
+}
 
-exports.build = build;
+function deleteBuild () {
+  return deleteAsync('build');
+}
 
-// Default
-
-exports.default = gulp.series(
-  clean,
-  copy,
-  copyImages,
-  gulp.parallel(
-    styles,
-    html,
-    scripts,
-    sprite,
-    createWebp
-  ),
+export function buildProd (done) {
+  isDevelopment = false;
   gulp.series(
-    server,
-    watcher
-  ));
+    deleteBuild,
+    compileProject
+  )(done);
+}
+
+export function runDev (done) {
+  gulp.series(
+    deleteBuild,
+    compileProject,
+    startServer,
+    watchFiles
+  )(done);
+}
