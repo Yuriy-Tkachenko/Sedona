@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ## Website for book hotels in Sedona city
-=======
-## Website for boo hotels in Sedona city
->>>>>>> 59c46aa83587acc96c3feb37e6b0266294dd5dd1
 
 ### Description:
 This website was created for a hotel in Sedona city, as part of training my skills in developing adaptive websites.
