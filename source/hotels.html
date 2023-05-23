@@ -79,7 +79,17 @@
           </fieldset>
           <fieldset class="filter-item">
             <legend class="filter-item__caption">Стоимость в сутки, ₽:</legend>
-  
+            <div class="range-filter">
+              <div class="range-filter__slider"></div>
+              <div class="price-controls">
+                <label class="price-controls__min-price price-control" for="min-price">
+                  <input class="price-controls__input" type="number" name="min-price" value="" min="0" max="500" placeholder="0" id="min-price">
+                </label>
+                <label class="price-controls__max-price price-control" for="max-price">
+                  <input class="price-controls__input" type="number" name="min-price" value="" min="0" max="500" placeholder="500" id="max-price">
+                </label>
+              </div>
+            </div>
           </fieldset>
         </div>
         <div class="results">
@@ -136,6 +146,7 @@
       </svg>
     </a>
   </footer>
+  <script src="https://unpkg.com/nouislider@14.6.3/distribute/nouislider.min.js"></script>
   <script src="js/script.js" type="module"></script>
 </body>
 </html>
